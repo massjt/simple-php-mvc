@@ -1,6 +1,6 @@
 Options -MultiViews
 RewriteEngine On
-RewriteBase /
+RewriteBase /public/
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_FILENAME} !-d
