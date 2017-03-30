@@ -5,9 +5,15 @@ class Home extends Controller
     {
         $user = $this->model('User');
         $user->name = $name;
-        //echo $user->name;
+        echo $user->name;
         $this->view('home/index', ['name' => $user->name]);
     }
 
-
+    public function create($username = '', $email = '')
+    {
+        User::create([
+            'username' => $username,
+            'email' => $email
+        ]);
+    }
 }

@@ -9,7 +9,8 @@ class App {
     public function __construct()
     {
         $url = $this->parseUrl();
-        if (file_exists('../app/controllers' . $url[0] . '.php')) {
+        var_dump($url[0]);
+        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
             $this->controller = $url[0];
             unset($url[0]);
         }
@@ -24,7 +25,7 @@ class App {
         }
         // 之前 unset()是 为了方便获得 params
         $this->params = $url ? array_values($url) : [];
-
+        var_dump($this->params);exit;
         call_user_func_array([ $this->controller, $this->method ], $this->params);
     }
     /*
