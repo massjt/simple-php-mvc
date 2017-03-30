@@ -25,9 +25,11 @@ class App {
         // 之前 unset()是 为了方便获得 params
         $this->params = $url ? array_values($url) : [];
 
-        call_user_func_array([$this->controller, $this->method], $this->params);
+        call_user_func_array([ $this->controller, $this->method ], $this->params);
     }
-
+    /*
+    这一步通过配置Apache获得
+     */
     public function parseUrl()
     {
         if (isset($_GET['url'])) {
